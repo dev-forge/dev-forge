@@ -15,10 +15,9 @@
     "react-scripts": "4.0.3"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "cross-env NODE_ENV=production node server/server.js",
+    "build": "cross-env NODE_ENV=production webpack",
+    "dev": "cross-env NODE_ENV=development concurrently \"nodemon server/server.js\" \"webpack serve --open --hot\""
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -54,6 +53,7 @@
     "redux-devtools-extension": "^2.13.9",
     "sass": "^1.43.5",
     "sass-loader": "^12.3.0",
-    "style-loader": "^3.3.1"
+    "style-loader": "^3.3.1",
+    "webpack": "^5.64.4"
   }
 }
