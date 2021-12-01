@@ -13,10 +13,10 @@ router.post('/posts', apiController.sendUserPost, (req, res) => {
 });
 
 
-// Create new user
-// router.post('/user/:newUser', apiController.handleOAuth, apiController.createUser, (req, res) => {
+// Handle OAuth
+router.get('/auth', apiController.handleOAuth, apiController.createUser, (req, res) => {
 
-// })
+})
 
 // // DELETE request
 // router.delete('/posts', apiController.postTask, (req, res) => {
