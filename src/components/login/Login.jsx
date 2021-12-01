@@ -24,7 +24,7 @@ function Login() {
           Login with GitHub
           <a
               className="login-link"
-              href={`https://github.com/login/oauth/authorize?scope=user&client_id=placeholder&redirect_uri=placeholder`}
+              href={`https://github.com/login/oauth/authorize?scope=user&client_id=86b114d572a0f7751bab&redirect_uri=http://localhost:8080/auth`}
               onClick={() => {
                 setData({ ...data, errorMessage: "" });
               }}
