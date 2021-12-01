@@ -1,4 +1,5 @@
 import React from 'react';
+import image from '../../../assets/images/github.png';
 import './Login.scss';
 
 function Login() {
@@ -10,6 +11,7 @@ function Login() {
       <form action={`https://github.com/login/oauth/authorize?scope=user&client_id=${client_id}&redirect_uri=${redirect_uri}`}>
         <fieldset>
           <legend>Login</legend>
+          <img src={image} width="100" height="100" />
         </fieldset>
         <input type="submit" value="Login with GitHub" />
       </form>
