@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Login.scss';
 
 function Login() {
+  const [data, setData] = useState({default: true});
+
   return (
     <section id="login">
       <form>
@@ -18,7 +20,16 @@ function Login() {
             </li>
           </ul>
         </fieldset>
-        <button>Submit</button>
+        <button>
+          Login with GitHub
+          <a
+              className="login-link"
+              href={`https://github.com/login/oauth/authorize?scope=user&client_id=placeholder&redirect_uri=placeholder`}
+              onClick={() => {
+                setData({ ...data, errorMessage: "" });
+              }}
+            />
+        </button>
       </form>
     </section>
   );

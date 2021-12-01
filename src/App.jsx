@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import {
   BrowserRouter,
   Routes,
@@ -15,7 +14,7 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<Login />} />
-          {/* <Route path="/main" element={} /> */}
+          {/* <Route path="/home" element={} /> */}
         </Routes>
       </div>
     </BrowserRouter>
