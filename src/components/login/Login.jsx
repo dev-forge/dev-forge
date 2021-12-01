@@ -8,7 +8,9 @@ const Login = (props) => {
 
   return (
     <section id="login">
-      <form action={`https://github.com/login/oauth/authorize?scope=user&client_id=${client_id}&redirect_uri=${redirect_uri}`}>
+      <form
+        action={`https://github.com/login/oauth/authorize?scope=user&client_id=${client_id}&redirect_uri=${redirect_uri}`}
+      >
         <fieldset>
           <legend>Login</legend>
           <img src={image} width="100" height="100" />
@@ -17,6 +19,6 @@ const Login = (props) => {
       </form>
     </section>
   );
-}
+};
 
 export default Login;
