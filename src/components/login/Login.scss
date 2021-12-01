@@ -17,6 +17,8 @@ section {
     border-radius: 1em;
     box-shadow: 0 0.5em 2em 0.5em rgba(0,0,0,0.2);
     fieldset {
+      display: grid;
+      justify-content: center;
       margin: 0;
       background-color: #fff;
       border: none;
@@ -26,10 +28,6 @@ section {
         padding: 0.3em;
         background-color: #fff;
         border-radius: 0.3em;
-      }
-      img {
-        display: grid;
-        justify-content: center;
       }
     }
     input {
