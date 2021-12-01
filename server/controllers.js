@@ -1,5 +1,5 @@
 const db = require('./model.js');
-
+const cookieParser = require('cookie-parser');
 const apiController = {};
 
 // GET request
@@ -11,7 +11,7 @@ apiController.getPosts = (req, res, next) => {
     res.locals.posts = result;
     return next();
   })
-}
+};
 
 // POST request
 apiController.sendUserPost = (req, res, next) => {
@@ -25,11 +25,20 @@ apiController.sendUserPost = (req, res, next) => {
     res.locals.newPost = result;
     return next();
   })
-}
+};
 
+apiController.createUser = (req, res, next) => {
+   
+};
 
-apiController.getUser = (req, res, next) => {
-
-}
+apiController.verifyUser = (req, res, next) => {
+  console.log('req.cookies:',req.cookies);
+  // Check if session token exists in localStorage
+  if(req.cookies) {
+    res.redirect('/api/home');
+  } else {
+    return next();
+  }  
+};
 
 module.exports = apiController;

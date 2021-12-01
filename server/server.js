@@ -3,13 +3,15 @@ const app = express();
 const path = require('path');
 const PORT = 3000;
 const apiRouter = require('./api');
+const cookieParser = require('cookie-parser');
 
 // parses requests to access req.body
 app.use(express.json());
 
 // parses incoming encoded url requests, true allows nested objects
 app.use(express.urlencoded({ extended: true }));
-
+//cookie parser
+app.use(cookieParser());
 // Api Router
 app.use('/api', apiRouter);
 
