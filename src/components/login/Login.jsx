@@ -3,6 +3,7 @@ import image from '../../../assets/images/github.png';
 import './Login.scss';
 
 function Login() {
+  const [data, setData] = useState({default: true});
   const client_id = process.env.REACT_APP_CLIENT_ID;
   const redirect_uri = process.env.REACT_APP_REDIRECT_URI;
 

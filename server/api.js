@@ -14,9 +14,13 @@ router.post('/posts', apiController.sendUserPost, (req, res) => {
 
 
 // Create new user
-router.get('/auth', apiController.verifyUser, apiController.createUser, (req, res) => {
- return res.status(200);
+router.get('/auth', apiController.handleOAuth, apiController.fetchAccessToken, apiController.getUserInfoAndSave, (req, res) => {
+  return res.send('hello')
+//  return res.status(200);:w
+
 })
+
+// router.
 
 // // DELETE request
 // router.delete('/posts', apiController.postTask, (req, res) => {
