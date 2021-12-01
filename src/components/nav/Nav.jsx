@@ -1,31 +1,16 @@
 import React from 'react';
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  Link
-} from 'react-router-dom';
 import './Nav.scss';
+import NavLinks from './NavLinks.jsx';
 
-function Nav() {
+const Nav = (props) => {
+
+  console.log('props', props); // undefined right now...
+
   return (
     <nav>
-      <h2>Dev Forge</h2>
+      <h1>Dev Forge</h1>
       <ul id='nav'>
-        <Link to="/home">
-          <li>Home</li>
-        </Link>
-        <Link to="/explore">
-          <li>Explore Posts</li>
-        </Link>
-        <Link to="/people">
-          <li>Find People</li>
-        </Link>
-        <Link to="/profile">
-          <li>
-            <img src="placeholder" height="100" width="100" />
-          </li>
-        </Link>
+        {props.isLoggedIn ? <NavLinks /> : 'A place for Codesmith members to collaborate.'}
       </ul>
     </nav>
   )
