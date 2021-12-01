@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createContext, useReducer } from 'react';
 import {
   BrowserRouter,
   Routes,
@@ -9,15 +9,21 @@ import './App.scss';
 import Login from './components/login/Login.jsx';
 
 function App() {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
   return (
-    <BrowserRouter>
-      <div className="App">
-        <Routes>
-          <Route path="/" element={<Login />} />
-          {/* <Route path="/home" element={} /> */}
-        </Routes>
-      </div>
-    </BrowserRouter>
+    <AuthContext.Provider
+      value={{state, dispatch}}>
+      <BrowserRouter>
+        <div className="App">
+          <Routes>
+            <Route path="/login" element={<Login />} />
+            {/* <Route path="/create" element={<CreateUser />} />
+            <Route path="/" element={<Feed />} /> */}
+          </Routes>
+        </div>
+      </BrowserRouter>
+    </AuthContext.Provider>
   );
 }
 
