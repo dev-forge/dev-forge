@@ -10,11 +10,11 @@ CREATE TABLE users (
 
 CREATE TABLE posts (
   _id bigserial PRIMARY KEY NOT NULL,
+  author varchar NOT NULL,
   title varchar NOT NULL,
   post_content varchar NOT NULL,
-  author varchar NOT NULL,
   date_created varchar NOT NULL,
-  likes integer NOT NULL CHECK (likes > 0)
+  likes integer NOT NULL DEFAULT 0
 );​ 
 
 CREATE TABLE hashtags (
