@@ -1,11 +1,10 @@
 CREATE TABLE users (
   _id bigserial PRIMARY KEY NOT NULL,
-  first_name varchar NOT NULL,
-  last_name varchar NOT NULL,
-  user_name varchar NOT NULL,
-  linkedin_url varchar NOT NULL,
-  cohort smallint NOT NULL CHECK (cohort > 0),
-  location varchar NOT NULL
+  full_name varchar,
+  github_url varchar,
+  access_token varchar NOT NULL,
+  cohort smallint CHECK (cohort > 0),
+  location varchar
 );
 
 CREATE TABLE posts (
